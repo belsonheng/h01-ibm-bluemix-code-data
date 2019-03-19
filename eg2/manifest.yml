@@ -1,0 +1,15 @@
+---
+declared-services:
+  personality-insights-tutorial:
+    label: personality_insights
+    plan: lite
+applications:
+- path: .
+  memory: 64M
+  instances: 1
+  domain: mybluemix.net
+  name: e0227371-app-watson
+  host: e0227371-watson
+  disk_quota: 1024M
+  services:
+  - personality-insights-tutorial

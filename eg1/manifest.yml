@@ -1,0 +1,17 @@
+---
+declared-services:
+  dashDB-nodesample:
+    label: "dashDB For Transactions"
+    plan: Lite
+applications:
+# replace the host variable below with your own unique one, as this one can be already taken
+- name: e0227371-app
+  memory: 64M
+  instances: 1
+  path: .
+  host: e0227371
+  framework: node
+  command:    node app.js
+  buildpack:  sdk-for-nodejs
+  services:
+  - e0227371-db
